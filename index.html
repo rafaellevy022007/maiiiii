@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See You Soon Maïmouna - Countdown</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100vh;
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(45deg, #000428, #004e92, #ff006e, #8338ec);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            color: #ff006e;
+            text-shadow: 4px 4px 0px #000, 8px 8px 0px #8338ec;
+            margin-bottom: 40px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 4px 4px 0px #000, 8px 8px 0px #8338ec, 0 0 20px #ff006e; }
+            to { text-shadow: 4px 4px 0px #000, 8px 8px 0px #8338ec, 0 0 40px #ff006e, 0 0 60px #ff006e; }
+        }
+        
+        .pixel-heart {
+            width: 160px;
+            height: 144px;
+            margin: 40px auto;
+            position: relative;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .pixel-row {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .pixel {
+            width: 8px;
+            height: 8px;
+            background: transparent;
+        }
+        
+        .pixel.filled {
+            background: #ff006e;
+            box-shadow: 0 0 4px #ff006e;
+        }
+        
+        .countdown {
+            font-size: 4rem;
+            color: #00d9ff;
+            text-shadow: 3px 3px 0px #000, 6px 6px 0px #ff006e;
+            margin: 30px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        .label {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000;
+            margin-top: 20px;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            animation: twinkle 3s linear infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 1.8rem; margin-bottom: 30px; }
+            .countdown { font-size: 2.5rem; }
+            .label { font-size: 1rem; }
+            .pixel-heart { width: 120px; height: 108px; }
+            .pixel { width: 6px; height: 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stars" id="stars"></div>
+        
+        <h1 class="title">SEE YOU SOON MAÏMOUNA</h1>
+        
+        <div class="pixel-heart">
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+            <div class="pixel-row">
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel filled"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+                <div class="pixel"></div>
+            </div>
+        </div>
+        
+        <!-- UPDATE THIS NUMBER MANUALLY -->
+        <div class="countdown" id="countdown">18</div>
+        <div class="label">DAYS TO GO</div>
+    </div>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
